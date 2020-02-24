@@ -14,6 +14,9 @@
 % following line.
 
 \usepackage{times}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
 
 % The preamble here sets up a lot of new/revised commands and
 % environments.  It's annoying, but please do *not* try to strip these
@@ -58,18 +61,10 @@
 {\setlength{\leftmargin}{.22in}}
 {\setlength{\labelsep}{.5em}}}
 {\end{list}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
 
 
-% Include your paper's title here
-
-\title{{\it Using a convolutional neural network to classify the Stree View House Number dataset}}
-
-
-% Place the author information here.  Please hand-code the contact
-% information and notecalls; do *not* use \footnote commands.  Let the
-% author contact information appear immediately below the author names
-% as shown.  We would also prefer that you don't change the type-size
-% settings shown here.
+\title{{\it Using a convolutional neural network to classify the Street View House Number dataset}}
 
 \author
 {Andrea Ferretti\\
@@ -79,11 +74,6 @@
 % Include the date command, but leave its argument blank.
 
 \date{}
-
-
-
-%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
-
 
 
 \begin{document} 
@@ -98,23 +88,28 @@
 
 
 
-% Place your abstract within the special {sciabstract} environment.
-
-
-
-% In setting up this template for *Science* papers, we've used both
-% the \section* command and the \paragraph* command for topical
-% divisions.  Which you use will of course depend on the type of paper
-% you're writing.  Review Articles tend to have displayed headings, for
-% which \section* is more appropriate; Research Articles, when they have
-% formal topical divisions at all, tend to signal them with bold text
-% that runs into the paragraph, for which \paragraph* is the right
-% choice.  Either way, use the asterisk (*) modifier, as shown, to
-% suppress numbering.
-
 \section*{Neural networks}
-dskaflkds.
-ldsafdk
+Neural networks are a family of predictors characterized by the combination of simple computational units, called neurons.
+A neuron typically performs the following computation: $ g(\vect{x}) = \sigma(\vect{\omega}^T \vect{x}) $, where the elements of the vector $\vect{\omega}$ are the parameters of the neuron, $\sigma$ is a non-linear function called activation function, and $\vect{x}$ is the vector $x_0,\ldots,x_n $ where $ x_0 = 1$ and $x_i$ for $i \in \{i,\ldots,n\}$  the output computed by another neuron.
+In the supervised learning setting, neurons are combined in a graph-like structure resulting in a computational network able to learn, by adjusting the parameters $\vect{\omega}$ of each neuron, the underlying mapping between data points and labels.
+
+An example of a simple neural network is given by the on in Figure \ref{fig:mlp}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{mlp}
+    \caption{A simple example of a feedforward network}
+    \label{fig:mlp}
+\end{figure}
+%do an example with a feed forward network
+%talk about how the difference for the input (no computation) and output (particular activation function depending on the task)
+%explain how to optimize with backpropagation
+%talk about using relu rather than sigmoid
+%introduce cnn (read book on what to write)
+%introduce regularization tecniques such as dropout, l2reg, batchNorm
+
+
+
 \section*{The Street View House Number dataset}
 
 \section*{Model training}
