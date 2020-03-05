@@ -17,6 +17,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \graphicspath{ {./images/} }
 
 % The preamble here sets up a lot of new/revised commands and
@@ -148,19 +149,63 @@ A typical ConvNet combines a variable number of blocks composed of one or more c
 \end{figure}
 
 Regularization consists in setting costraints to the model in order to avoid overfitting of the training set. Several techniques have been developed: L2 regularization adds to the loss function a fraction of the L2 norm of the weights, penalizing models where some of the weights have a value much greater that the rest; this is done to increase the generalization capabilities by incouraging the model to use all the input values when making a prediciton, instead of having few input dimensions heavily influencing the prediction.
-Dropout	consists in randomly (with a fixed probability) dropping neurons, along with their connections, from the network during training, preventing neurons from co-adapting too much. At test time all neurons are active and their outputs are scaled to match the output during training in expectation. Lastly batch normalization is seen as a normalization technique that normalizes the output of each neuron with respect to the values produced by that neuron for the batch that the network it's iterating over during training, the normalized value is then linearly transormed to give the data a new distribution. The parameters that determine this transofrmation are learnt throught training.
+Dropout	consists in randomly (with a fixed probability) dropping neurons, along with their connections, from the network during training, preventing neurons from co-adapting too much. At test time all neurons are active and their outputs are scaled to match the output during training in expectation.
 
-%introduce regularization tecniques such as dropout, l2reg, batchNorm
+Lastly batch normalization is seen as a normalization technique that normalizes the output of each neuron with respect to the values produced by that neuron for the batch that the network it's iterating over during training, the normalized value is then linearly transormed to give the data a new distribution. The parameters that determine this transofrmation are learnt throught training. Batch normalization has been shown to improve the prediction performance even though the interpretation of its operation is not yet completely clear.
 
 
+\section*{The dataset}
+The Street View House Number dataset consists of real world images obtained from house numbers in Google Street View. The images are available in two format: the original, variable-resolution, images, with a separate file describing the position of each digit in the image (shown in Figure \ref{fig:svhn1}), and
+32 by 32 pixels images centered around a single digit, an example of the second format is shown in Figure \ref{fig:svhn2}.
 
-\section*{The Street View House Number dataset}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{svhn-ocr}
+	\caption{The original images obtained from Street View. The blue rectangles describe the position of each digit in the images, they are shown for clarity but are not present in the images, their coordinates are stored in a separate file}
+	\label{fig:svhn1}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{svhn-centered}
+	\caption{The images cropped and centered around a single digit. Note the presence of other digits to the sides of the one centered}
+	\label{fig:svhn2}
+\end{figure}
+
+The second format, with the images already cropped and centered around the digit to predict, is certanly to prefer for a classification problem. This is due to the fact that the input are all of the same shape and the format is similar to other datasets that have been extensively analyzed. It is to note that the preprocessing done leaves nonetheless other digits in the image that are nonrelevant to the prediction, from this a greater degree of difficulty than just predicting a single isolated digit arises.
+The faced problem is therefore a classification problem where the input are 32 by 32 pixels images classified into 10 classes, where an image representing a 9 has a numerical label 9, 1 has a numericla label 1 and so on, except for 0 which has label 10 in the dataset. The training set contains 73257 images and the test set 26032. Additional 531131, somewhat less difficult, images are available to use as extra training images, but they will not be used in this experiment. A validation set has been randomly extraced from the training set, the validation set size is 10\% of the original training set size.
+The distribution of the labels for the data sets is shown in Figure \ref{fig:hist}. Because of the nature of house numbering it is expected to see a higher presence of lower digits, particulary 1 and 2.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.31\textwidth}
+		\includegraphics[width=\linewidth]{hist_train}
+		\caption{Training set}
+		\label{fig:hista}
+	\end{subfigure}
+	\hspace*{\fill} % separation between the subfigures
+	\begin{subfigure}{0.31\textwidth}
+		\includegraphics[width=\linewidth]{hist_validation}
+		\caption{Validation set}
+		\label{fig:histb}
+	\end{subfigure}
+	\hspace*{\fill} % separation between the subfigures
+	\begin{subfigure}{0.31\textwidth}
+		\includegraphics[width=\linewidth]{hist_test}
+		\caption{Test set}
+		\label{fig:histc}
+	\end{subfigure}
+	\caption{Histograms representing the absolute frequency of the labels for the training set (a), validation set (b), and test set (c). The distribution is very similar among the various sets, making it sound to use them for machine learning tasks.}
+	\label{fig:hist}
+\end{figure}
 
 \section*{Model training}
 
 \section*{Results}
 
-
+%show confusion matrix
+%show worst predictions (high probability but wrong)
+%more thorough search of hyperparameters may be needed
 
 \end{document}
 
