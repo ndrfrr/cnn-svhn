@@ -88,7 +88,11 @@
 
 \maketitle 
 
+\begin{sciabstract}
 
+This report serves as a descriprion of 
+
+\end{sciabstract}
 
 \section*{Neural networks}
 Neural networks are a family of predictors characterized by the combination of simple computational units, called neurons.
@@ -126,10 +130,11 @@ $$
 $$
 where $\mathbb{I}(E) \in \{0, 1\}$ is the indicator function of an event $E$, meaning that $\mathbb{I}(E) = 1$ if and only if $E$ occours and $\mathbb{I}(E) = 0$ otherwise.
 
-Given the loss function $\ell$ the network can be trained on the training data to minimize $\ell$ with respect to the parameters of each neuron. This is typically done with the mini-batched stochastic gradient descent algorithm, where, at each timestep, a fixed number of examples creating a subset $B_t$ of the training set is randomly selected and every parameter is iteratively updated following the rule:
-$$
-\omega_{l,n,i} \leftarrow \omega_{l,n,i} - \eta_t\frac{1}{|B_t|}\sum_{b \in B_t}{\frac{\partial \ell(y_b,\vect{\hat{y}}_b)}{\partial \omega_{l,n,i}}}
-$$
+Given the loss function $\ell$ the network can be trained on the training data to minimize $\ell$ with respect to the parameters of each neuron. This is typically done with the mini-batched stochastic gradient descent algorithm, where, at each timestep, a fixed number of examples creating a subset $B^{(t)}$ of the training set is randomly selected and every parameter is iteratively updated following the rule:
+\begin{equation}
+\label{eq:sgd}
+\omega_{l,n,i}^{(t+1)} \leftarrow \omega_{l,n,i}^{(t)} - \eta^{(t)}\frac{1}{|B^{(t)}|}\sum_{b \in B^{(t)}}{\frac{\partial \ell^{(t)}(y_b,\vect{\hat{y}}_b)}{\partial \omega_{l,n,i}}}
+\end{equation}
 where, as depicted in Figure \ref{fig:mlp}, $\omega_{l,n,i}$ represents the $i$-th parameter of the $n$-th neuron in the $l$-th layer, and $\vect{\hat{y}}_b$ is the output computed by the network for the example $(x_b, y_b)$ of the training set; $\eta_t$ is the learning rate that determines the update size. To calculate efficiently the partial derivatives with respect to all the parameters $\omega$ the backpropagation algorithm is used. The algorithm uses the chain rule to compute the derivative of a composite function:
 $$
 \frac{df(g(x))}{dx} = \frac{df(g)}{dg} \frac{dg(x)}{dx}
@@ -155,25 +160,27 @@ Lastly batch normalization is seen as a normalization technique that normalizes 
 
 
 \section*{The dataset}
-The Street View House Number dataset consists of real world images obtained from house numbers in Google Street View. The images are available in two format: the original, variable-resolution, images, with a separate file describing the position of each digit in the image (shown in Figure \ref{fig:svhn1}), and
+The Street View House Number dataset consists of real world RGB images obtained from house numbers in Google Street View. The images are available in two format: the original, variable-resolution, images, with a separate file describing the position of each digit in the image (shown in Figure \ref{fig:svhn1}), and
 32 by 32 pixels images centered around a single digit, an example of the second format is shown in Figure \ref{fig:svhn2}.
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{svhn-ocr}
-	\caption{The original images obtained from Street View. The blue rectangles describe the position of each digit in the images, they are shown for clarity but are not present in the images, their coordinates are stored in a separate file}
-	\label{fig:svhn1}
-\end{figure}
+\begin{figure}[h]\centering
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\textwidth]{svhn-ocr}
+		\caption{The first format}
+		\label{fig:svhn1}
+	\end{subfigure}
 
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=\textwidth]{svhn-centered}
-	\caption{The images cropped and centered around a single digit. Note the presence of other digits to the sides of the one centered}
-	\label{fig:svhn2}
+	\begin{subfigure}{\textwidth}
+		\includegraphics[width=\textwidth]{svhn-centered}
+		\caption{The second format}
+		\label{fig:svhn2}
+	\end{subfigure}
+	\label{fig:svhn}
+	\caption{(a) The original images obtained from Street View. The blue rectangles describe the position of each digit in the images, they are shown for clarity but are not present in the images, their coordinates are stored in a separate file. (b) The images cropped and centered around a single digit. Note the presence of other digits to the sides of the one centered}
 \end{figure}
 
 The second format, with the images already cropped and centered around the digit to predict, is certanly to prefer for a classification problem. This is due to the fact that the input are all of the same shape and the format is similar to other datasets that have been extensively analyzed. It is to note that the preprocessing done leaves nonetheless other digits in the image that are nonrelevant to the prediction, from this a greater degree of difficulty than just predicting a single isolated digit arises.
-The faced problem is therefore a classification problem where the input are 32 by 32 pixels images classified into 10 classes, where an image representing a 9 has a numerical label 9, 1 has a numericla label 1 and so on, except for 0 which has label 10 in the dataset. The training set contains 73257 images and the test set 26032. Additional 531131, somewhat less difficult, images are available to use as extra training images, but they will not be used in this experiment. A validation set has been randomly extraced from the training set, the validation set size is 10\% of the original training set size.
+The faced problem is therefore a classification problem where the input are 32 by 32 pixels images classified into 10 classes, where an image representing a 9 has a numerical label 9, 1 has a numericla label 1 and so on, except for 0 which has label 10 in the dataset. The training set contains 73257 images and the test set 26032. Additional 531131, somewhat less difficult, images are available to use as extra training images, but they will not be used in this experiment. A validation set for hyperparameter tuning has been randomly extraced from the training set, the validation set size is 10\% of the original training set size; this resulted in a smaller training set during the model design phase.
 The distribution of the labels for the data sets is shown in Figure \ref{fig:hist}. Because of the nature of house numbering it is expected to see a higher presence of lower digits, particulary 1 and 2.
 
 \begin{figure}[h]
@@ -198,8 +205,37 @@ The distribution of the labels for the data sets is shown in Figure \ref{fig:his
 	\caption{Histograms representing the absolute frequency of the labels for the training set (a), validation set (b), and test set (c). The distribution is very similar among the various sets, making it sound to use them for machine learning tasks.}
 	\label{fig:hist}
 \end{figure}
+The data set can be obtained at the following website: http://ufldl.stanford.edu/housenumbers/
 
 \section*{Model training}
+
+The first step involved some data preprocessing. The images are colored but the colors do not seem to convey any usefull information that can be used to distinguish one digit from another, therefore the images have been converted form RGB to grayscale using the formula $ gv = 2989*r+0.5870*g+0.1140*b $ where $r, g, b$ are the pixel values for the red, green, and blue channels and $gv$ is the corresponding grayscale value of that pixel. This was followed by a mean subtraction and a normalization. Mean subtraction consists in subtracting the mean across every feature of the input, making them zero centered; for images, in particular, the mean among all the pixel in the training set can be calculated and subtracted instead. The normalization is obtained by dividing each pixel by the standard deviation of all the pixel after they have been zero centered. It is important to notice that the mean and the standard deviation have to be calculated on the training set only and then used to preprocess the training set, the validation set, and the test set. This is due to the fact that, in a real world scenario, the model can't have those statistics for future, never seen before, data points it will have to classify, and since the test set is supposed to approximate  those data points its statistics cannot be used.
+
+In order to design the model and tune hyperparameters it has been used a form of cross validation consisting of the following steps: select a hyperparameter to optimize, traing the model for different values of that hyperparameter on the reduced training set (the reduced training set consists of the original training set from which examples added to the validation set have been removed), the model with the smallest loss on the validation set determines the value of the hyperparameter to choose; this process is then repeated for all the remaining non-optimized hyperparameters. It is worth noting that this does not represent a proper hyperparameter search since, once the value of a hyperparameter is chosen, the optimization of the remaining hyperparameters depends on the previously selected ones. A more correct way to perform the search, albeit much more computationally expensive, would be to train the model with numerous combinations of values of the hyperparameters and choosing the combination of values that performs best on the validation set; this method has not been performed in this experiment due to its computational burden.
+
+As described in the first section of this report a ConvNet has typically three components: convolutional layers, pooling layers and a feedforward component. The base network architecture that has been proven to have good results for similar tasks consists of blocks made of one or more convolutional layers followed by  a pooling layer, these blocks are concatenated untill the output of the last pooling layer has a small enough size. At this point one or more convolutional layers can follow to increase the representational power of the network. The resulting output is then flattened into a vector and fed to a feedforward network with a softmax output layer for classification purpose. The filter of the convolutional layers have size equal to 3 on each dimension, these small filters have been shown to consistently perform better that larger filters, especially when stacking multiple convolutional layers on top of each other. The input of convolutional layers is zero-padded before performing the convolution so that the sizes of the output dimensions remain unchanged. The filters of the pooling layers have size equal to 2 for each dimension, halving the size of the input dimensions, otherwise larger filters would discard too much information. Considering the original input size is 32 by 32, no more than two pooling layers can be applied, otherwise the output would be smaller than 8 by 8 which would be too small to convey enough information for classification.
+
+In the first section it was stated that parameters of the network can be updated using stochastic gradeint descent which follows the update rule (\ref{eq:sgd}) where the learning rate $\eta^{(t)}$ at timestemp $t$ is a hyperparameter. Adam, short for Adaptive Moment Estimation, is a more recent technique that improves convergence time and adjusts the learning rate for each parameter based on the update rule:
+$$
+\vect{\omega}^{(t+1)}\leftarrow \vect{\omega}^{(t)}-\eta^{(t)} {\frac {\vect{{\hat {m}}}_{\omega}}{{\sqrt {\vect{{\hat {v}}}_{\omega}}}+\epsilon }}
+$$
+where $\vect{\omega}^{(t)}$ is the vector of parameters at time step $t$, $\epsilon$ is a small constant to avoid division by zero, and	 $\vect{{\hat {m}}}_{\omega}$ and $\vect{{\hat {v}}}_{\omega}$ are, respectively, estimates of the first and second moment of the gradient, and are given by:
+$$
+\vect{\hat {m}}_{\omega}={\frac {\vect{m}_{\omega}^{(t)}}{1-\beta _{1}^{t}}} \text{;}\qquad
+\vect{m}_{\omega}^{(t)}\leftarrow \beta _{1}\vect{m}_{\omega}^{(t-1)}+(1-\beta _{1})\nabla _{\omega}\ell^{(t)}
+$$
+$$
+\vect{\hat {v}}_{\omega}={\frac {\vect{v}_{\omega}^{(t)}}{1-\beta _{2}^{t}}} \text{;}\qquad
+\vect{v}_{\omega}^{(t)}\leftarrow \beta _{2}\vect{v}_{\omega}^{(t-1)}+(1-\beta _{2})(\nabla _{\omega}\ell^{(t)})^2
+$$
+$\beta_{1}$ and $\beta_{2}$ are hyperparameters called forgetting factors and usually, as well as in this experiment, they assume values of $0.9$ and $0.999$ respectively, $ \vect{v}_{\omega}^{(t)}$ and $ \vect{v}_{\omega}^{(t)}$ are equal to the zero vector for $t=0$; squaring and square-rooting is done elementwise. This means that the learning rate $\eta^{(t)}$ is divided by a factor $\vect{\hat {v}}_{\omega}$ proportional to the moving avarage of the square of the gradient over time, the bigger the avarage the smaller the learning rate, and the step $\vect{\hat {m}}_{\omega}$ is proportional to the running avarage of the gradient over time.
+
+The number of convolutional layers, the number of filter in each layer, the number of layers in the feedforward component, the number of neurons in the feedforward layers, and other customization are all considered hyperparameters and have been cross validated as described above. The resulting model structure consisted of 3 convolutional layers having $n$ filters each follwed by a pooling layer, then, again three convolutional layers follwed by a pooling layer, then three convolutional layers
+%talk about the hyperparameters
+
+
+
+
 
 \section*{Results}
 
