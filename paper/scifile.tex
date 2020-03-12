@@ -89,9 +89,7 @@
 \maketitle 
 
 \begin{sciabstract}
-
-This report serves as a descriprion of 
-
+The experiment described in this report consisted of developing and using a convolutional neural network to classify the Street View House Number dataset. In the first section a description of neural networks, particulary the kind of networks utilized in this experiment,  is presented . In the second section the dataset and its peculiarities are introduced. In the third section is shown how the architecture of the model was developed and how the hyperparameters were tuned. In the fourth and final section performance of the resulting model and possible improvement are analyzed.
 \end{sciabstract}
 
 \section*{Neural networks}
@@ -207,7 +205,7 @@ The distribution of the labels for the data sets is shown in Figure \ref{fig:his
 \end{figure}
 The data set can be obtained at the following website: http://ufldl.stanford.edu/housenumbers/
 
-\section*{Model training}
+\section*{Developing the model}
 
 The first step involved some data preprocessing. The images are colored but the colors do not seem to convey any usefull information that can be used to distinguish one digit from another, therefore the images have been converted form RGB to grayscale using the formula $ gv = 2989*r+0.5870*g+0.1140*b $ where $r, g, b$ are the pixel values for the red, green, and blue channels and $gv$ is the corresponding grayscale value of that pixel. This was followed by a mean subtraction and a normalization. Mean subtraction consists in subtracting the mean across every feature of the input, making them zero centered; for images, in particular, the mean among all the pixel in the training set can be calculated and subtracted instead. The normalization is obtained by dividing each pixel by the standard deviation of all the pixel after they have been zero centered. It is important to notice that the mean and the standard deviation have to be calculated on the training set only and then used to preprocess the training set, the validation set, and the test set. This is due to the fact that, in a real world scenario, the model can't have those statistics for future, never seen before, data points it will have to classify, and since the test set is supposed to approximate  those data points its statistics cannot be used.
 
@@ -284,7 +282,7 @@ The value of the loss function decreased throughout the steps going from the val
 \section*{Results}
 
 The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained on the entire training set and evaluated on the test set.
-
+%say how the learnign rate decays
 %show confusion matrix
 %show worst predictions (high probability but wrong)
 %more thorough search of hyperparameters may be needed
