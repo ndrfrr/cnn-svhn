@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.29)  11 MAR 2020 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.29)  12 MAR 2020 01:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -145,7 +145,20 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@subtable=\count101
 )
 \c@lastnote=\count102
- (./scifile.aux)
+ (./scifile.aux
+
+LaTeX Warning: Label `fig:hista' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:hista' multiply defined.
+
+
+LaTeX Warning: Label `fig:histb' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:histb' multiply defined.
+
+)
 \openout1 = `scifile.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
@@ -305,35 +318,51 @@ tp://ufldl.stanford.edu/housenumbers/
  []
 
 [9 <./images/hist_train.png> <./images/hist_validation.png> <./images/hist_test
-.png>] [10] [11] [12] (./scifile.aux) ) 
+.png>] [10] [11] [12]
+<./images/val_loss.png, id=70, 508.90125pt x 211.79124pt>
+File: ./images/val_loss.png Graphic file (type png)
+<use ./images/val_loss.png>
+Package pdftex.def Info: ./images/val_loss.png  used on input line 267.
+(pdftex.def)             Requested size: 223.0721pt x 92.83618pt.
+<./images/val_acc.png, id=71, 508.90125pt x 211.79124pt>
+File: ./images/val_acc.png Graphic file (type png)
+<use ./images/val_acc.png>
+Package pdftex.def Info: ./images/val_acc.png  used on input line 273.
+(pdftex.def)             Requested size: 223.0721pt x 92.83618pt.
+ [13 <./images/val_loss.png> <./images/val_acc.png>]
+(./scifile.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3672 strings out of 494880
- 53940 string characters out of 6179601
- 113034 words of memory out of 5000000
- 6925 multiletter control sequences out of 15000+600000
+ 3683 strings out of 494880
+ 54181 string characters out of 6179601
+ 113086 words of memory out of 5000000
+ 6934 multiletter control sequences out of 15000+600000
  25372 words of font info for 68 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  42i,11n,40p,1765b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc
-/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on scifile.pdf (12 pages, 997287 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on scifile.pdf (13 pages, 1019956 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 130 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

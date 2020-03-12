@@ -231,7 +231,6 @@ $$
 $\beta_{1}$ and $\beta_{2}$ are hyperparameters called forgetting factors and usually, as well as in this experiment, they assume values of $0.9$ and $0.999$ respectively, $ \vect{v}_{\omega}^{(t)}$ and $ \vect{v}_{\omega}^{(t)}$ are equal to the zero vector for $t=0$; squaring and square-rooting is done elementwise. This means that the learning rate $\eta^{(t)}$ is divided by a factor $\vect{\hat {v}}_{\omega}$ proportional to the moving avarage of the square of the gradient over time, the bigger the avarage the smaller the learning rate, and the step $\vect{\hat {m}}_{\omega}$ is proportional to the running avarage of the gradient over time, therefore the last gradient influences only a fraction of the update.
 
 The starting hyperparameters and their respective value are given in Table \ref{tab:def-hyper}. These hyperparameter were validate as describe above in this order (a block corresponds to a series of convolutional layers interrupted by a pooling layer): number of convolutional layers in each block, number of filters in each layer of each block, number of layers in the feedforward component, number of neurons in the feedforward layers, applying dropout in the feedforward layers, batch size, l2 regularization, learning rate, learning rate decay, and batch normalization. After the validation the model was enlarged by adding more parameters to it as long as the loss function on the validation set decreased. The validated values of the hyperparameters, as well as the values of the enlarged model, are shown in Table \ref{tab:def-hyper}.
-The value of the loss function decreased throughout the steps going from the value of 0.37 at the start, to 0.21 after validation, to 0.19 after enlargement.
 
 \begin{table}
 	\centering
@@ -259,13 +258,32 @@ The value of the loss function decreased throughout the steps going from the val
 	\caption{hyperparameters and their values at each phase of the training}
 	\label{tab:def-hyper}
 \end{table}
+
+The value of the loss function decreased throughout the steps going from the value of 0.37 at the start, to 0.21 after validation, to 0.19 after enlargement. Likewise accuracy increased from 93.2\% and 89.2\% to 99.9\% and 95.4\% on training and validation set respectively. It is worth noting that the model converges extemely quickly to the best solution after about five epochs, then slight overfitting arises and increasing regularization factors don't improve this aspect. Graphs of accuracy and loss are shown in Figure \ref{fig:val_graphs}. In order to achive better results a more complex network architecture would probably be necessary.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{val_loss}
+		\caption{Loss}
+		\label{fig:hista}
+	\end{subfigure}
+	\hspace*{\fill} % separation between the subfigures
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{val_acc}
+		\caption{Accuracy}
+		\label{fig:histb}
+	\end{subfigure}
+	\caption{Loss and accuracy of the final enlarged model during training on the reduced training set and the validation set.}
+	\label{fig:val_graphs}
+\end{figure}
+
 %talk about the hyperparameters
 
 
-
-
-
 \section*{Results}
+
+The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained on the entire training set and evaluated on the test set.
 
 %show confusion matrix
 %show worst predictions (high probability but wrong)
