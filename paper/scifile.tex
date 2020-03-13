@@ -89,7 +89,7 @@
 \maketitle 
 
 \begin{sciabstract}
-The experiment described in this report consisted of developing and using a convolutional neural network to classify the Street View House Number dataset. In the first section a description of neural networks, particulary the kind of networks utilized in this experiment,  is presented . In the second section the dataset and its peculiarities are introduced. In the third section is shown how the architecture of the model was developed and how the hyperparameters were tuned. In the fourth and final section performance of the resulting model and possible improvement are analyzed.
+The experiment described in this report consisted of developing and using a convolutional neural network to classify the Street View House Number dataset. In the first section a description of neural networks, particulary the kind of networks utilized in this experiment,  is presented . In the second section the dataset and its peculiarities are introduced. In the third section is shown how the architecture of the model was developed and how the hyperparameters were tuned. In the fourth and final section performance of the resulting model and possible improvements are analyzed.
 \end{sciabstract}
 
 \section*{Neural networks}
@@ -257,22 +257,22 @@ The starting hyperparameters and their respective value are given in Table \ref{
 	\label{tab:def-hyper}
 \end{table}
 
-The value of the loss function decreased throughout the steps going from the value of 0.37 at the start, to 0.21 after validation, to 0.19 after enlargement. Likewise accuracy increased from 93.2\% and 89.2\% to 99.9\% and 95.4\% on training and validation set respectively. It is worth noting that the model converges extemely quickly to the best solution after about five epochs, then slight overfitting arises and increasing regularization factors don't improve this aspect. Graphs of accuracy and loss are shown in Figure \ref{fig:val_graphs}. In order to achive better results a more complex network architecture would probably be necessary.
+The value of the loss function decreased throughout the steps going from the value of 0.37 at the start, to 0.21 after validation, to 0.19 after enlargement. Likewise accuracy increased from 93.2\% and 89.2\% to 99.9\% and 95.4\% on training and validation set respectively. It is worth noting that the model converges extemely quickly to the best solution after about five epochs, then slight overfitting arises and increasing regularization factors don't improve this aspect. Graphs for accuracy and loss during training of the enlarged model are shown in Figure \ref{fig:val_graphs}. In order to achive better results a more complex network architecture would probably be necessary.
 
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}{0.49\textwidth}
 		\includegraphics[width=\linewidth]{val_loss}
 		\caption{Loss}
-		\label{fig:hista}
+		\label{fig:valA}
 	\end{subfigure}
 	\hspace*{\fill} % separation between the subfigures
 	\begin{subfigure}{0.49\textwidth}
 		\includegraphics[width=\linewidth]{val_acc}
 		\caption{Accuracy}
-		\label{fig:histb}
+		\label{fig:valB}
 	\end{subfigure}
-	\caption{Loss and accuracy of the final enlarged model during training on the reduced training set and the validation set.}
+	\caption{Loss and accuracy on the validation and reduced training set of the final enlarged model after each epoch of training on the reduced training set.}
 	\label{fig:val_graphs}
 \end{figure}
 
@@ -281,7 +281,27 @@ The value of the loss function decreased throughout the steps going from the val
 
 \section*{Results}
 
-The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained on the entire training set and evaluated on the test set. It obtained a loss of
+The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained on the entire training set and evaluated on the test set. The model performed substantially better during testing obtaining a loss of 0.15 and accury of 96.2\% on the test set. This increase of performance may be attributed to the larger training set compared to the validation phase. Graphs of the loss and accuracy of the model during training are given in Figure \ref{fig:train_graphs}.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{train_loss}
+		\caption{Loss}
+		\label{fig:trainA}
+	\end{subfigure}
+	\hspace*{\fill} % separation between the subfigures
+	\begin{subfigure}{0.49\textwidth}
+		\includegraphics[width=\linewidth]{train_acc}
+		\caption{Accuracy}
+		\label{fig:trainB}
+	\end{subfigure}
+	\caption{Loss and accuracy on the test and training set of the final enlarged model after each epoch of training on the complete training set}
+	\label{fig:train_graphs}
+\end{figure}
+
+
+
 %say how the learnign rate decays
 %show confusion matrix
 %show worst predictions (high probability but wrong)
