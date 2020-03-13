@@ -300,7 +300,16 @@ The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained 
 	\label{fig:train_graphs}
 \end{figure}
 
+The confusion matrix of the test set predictions provided in Figure \ref{fig:conf_mat} shows that the model tends to misclassify the digit 7 as 1 more often compared to the other errors. This may be interpreted in a positive way meaning that, since the number 7 and 1 have relatively similar shapes, the model is actually learning the shapes of the digits. The same argument can be made for other frequent misclassification such as the digit 8 predicted as 6 and the digit 6 predicted as 5.
 
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.7\textwidth]{confusion_matrix}
+	\caption{The confusion matrix  given by the predictions of the model on the test set. The row denotes the true label, the column the predicted label, and the value is the percentages of data points with true label given by the row and prediction given by the column.}
+	\label{fig:conf_mat}
+\end{figure}
 
 %say how the learnign rate decays
 %show confusion matrix
