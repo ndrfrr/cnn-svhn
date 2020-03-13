@@ -310,12 +310,16 @@ The confusion matrix of the test set predictions provided in Figure \ref{fig:con
 	\label{fig:conf_mat}
 \end{figure}
 
+The model uses the $softmax$ function as the last output layers, because of this its outputs can be interpreted as a distribution probability over the labels given a data point (as expalined in the first section) and the prediction will be the label with the highest probability. This allows to see among the wrong predictions the ones that the model classified with the highest confidence (highest probability value). This revealed that there are instances of mislabeled examples in the test set. Figure \ref{fig:worst_PRED} shows the top forty wrong predictions with the highest confidence and clearly the majority of those data points are mislabeled. A similar analysis among the wrong predictions with the lowest confidence didn't shown any kind of mislabeling of the examples. It remains unclear the full extent to which the mislabeling affects the test set and possibly the training set, and consequently the evaluation and training of the model.
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=\textwidth]{worst_pred}
+	\caption{The top forty wrong predictions to which the model assigns the highest confidence. It is clear the presence of some mislabeling of the examples. The images are shown after the conversion from RGB to grayscale.}
+	\label{fig:worst_PRED}
+\end{figure}
 
-%say how the learnign rate decays
-%show confusion matrix
-%show worst predictions (high probability but wrong)
-%more thorough search of hyperparameters may be needed
+In conclusion the model classified the test set with an accuracy of 96.2\% and reached convergence extremely quickly in about 7 epochs. Possible ways to improve these results would be to apply typical image processing methods, such as contrast normalization and luminosity normalization, to preprocess the data points, to use a more complex neural network architecture, to understand to which extent, if at all, the mislabeling effects the training of the model, and, finally, to perform a more thorough hyperparameter search.
 
 \end{document}
 
