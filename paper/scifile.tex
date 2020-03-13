@@ -89,7 +89,7 @@
 \maketitle 
 
 \begin{sciabstract}
-The experiment described in this report consisted of developing and using a convolutional neural network to classify the Street View House Number dataset. In the first section a description of neural networks, particulary the kind of networks utilized in this experiment,  is presented . In the second section the dataset and its peculiarities are introduced. In the third section is shown how the architecture of the model was developed and how the hyperparameters were tuned. In the fourth and final section performance of the resulting model and possible improvements are analyzed.
+The experiment described in this report consisted of developing and using a convolutional neural network to classify the Street View House Number dataset. In the first section a description of neural networks, particulary the kind of networks utilized in this experiment,  is presented . In the second section the dataset and its peculiarities are introduced. In the third section is shown how the architecture of the model was developed and how the hyperparameters were tuned. In the fourth and final section performance of the resulting model and possible improvements are analyzed. The code used for this experiment can be found at https://github.com/ferrettindr/cnn-svhn.
 \end{sciabstract}
 
 \section*{Neural networks}
@@ -303,13 +303,14 @@ The final model (called enlarged in Table \ref{tab:def-hyper}) has been trained 
 The confusion matrix of the test set predictions provided in Figure \ref{fig:conf_mat} shows that the model tends to misclassify the digit 7 as 1 more often compared to the other errors. This may be interpreted in a positive way meaning that, since the number 7 and 1 have relatively similar shapes, the model is actually learning the shapes of the digits. The same argument can be made for other frequent misclassification such as the digit 8 predicted as 6 and the digit 6 predicted as 5.
 
 
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.7\textwidth]{confusion_matrix}
 	\caption{The confusion matrix  given by the predictions of the model on the test set. The row denotes the true label, the column the predicted label, and the value is the percentages of data points with true label given by the row and prediction given by the column.}
 	\label{fig:conf_mat}
 \end{figure}
+
+
 
 %say how the learnign rate decays
 %show confusion matrix
