@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.29)  13 MAR 2020 22:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.29)  14 MAR 2020 19:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -148,19 +148,19 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
  (./scifile.aux)
 \openout1 = `scifile.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 81.
-LaTeX Font Info:    ... okay on input line 81.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 81.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
+LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 68.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -235,148 +235,145 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 89.
+LaTeX Font Info:    Try loading font information for U+msa on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 89.
+LaTeX Font Info:    Try loading font information for U+msb on input line 76.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 91.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 <./images/mlp.png, id=15, 925.4575pt x 441.65pt>
 File: ./images/mlp.png Graphic file (type png)
 <use ./images/mlp.png>
-Package pdftex.def Info: ./images/mlp.png  used on input line 114.
+Package pdftex.def Info: ./images/mlp.png  used on input line 101.
 (pdftex.def)             Requested size: 455.24408pt x 217.25276pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[2] [3 <./images/mlp.png>] [4] [5]
-<./images/cnn.jpeg, id=37, 1259.70625pt x 425.59pt>
+[2] [3 <./images/mlp.png>] [4]
+<./images/cnn.jpeg, id=34, 1259.70625pt x 425.59pt>
 File: ./images/cnn.jpeg Graphic file (type jpg)
 <use ./images/cnn.jpeg>
-Package pdftex.def Info: ./images/cnn.jpeg  used on input line 149.
+Package pdftex.def Info: ./images/cnn.jpeg  used on input line 135.
 (pdftex.def)             Requested size: 455.24408pt x 153.80322pt.
+ [5 <./images/cnn.jpeg>]
+<./images/svhn-ocr.png, id=38, 1095.09125pt x 293.095pt>
+File: ./images/svhn-ocr.png Graphic file (type png)
+<use ./images/svhn-ocr.png>
+Package pdftex.def Info: ./images/svhn-ocr.png  used on input line 152.
+(pdftex.def)             Requested size: 455.24408pt x 121.84235pt.
+<./images/svhn-centered.png, id=39, 917.4275pt x 234.8775pt>
+File: ./images/svhn-centered.png Graphic file (type png)
+<use ./images/svhn-centered.png>
+Package pdftex.def Info: ./images/svhn-centered.png  used on input line 158.
+(pdftex.def)             Requested size: 455.24408pt x 116.54964pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[6] [7 <./images/cnn.jpeg>]
-<./images/svhn-ocr.png, id=45, 1095.09125pt x 293.095pt>
-File: ./images/svhn-ocr.png Graphic file (type png)
-<use ./images/svhn-ocr.png>
-Package pdftex.def Info: ./images/svhn-ocr.png  used on input line 166.
-(pdftex.def)             Requested size: 455.24408pt x 121.84235pt.
-<./images/svhn-centered.png, id=46, 917.4275pt x 234.8775pt>
-File: ./images/svhn-centered.png Graphic file (type png)
-<use ./images/svhn-centered.png>
-Package pdftex.def Info: ./images/svhn-centered.png  used on input line 172.
-(pdftex.def)             Requested size: 455.24408pt x 116.54964pt.
- [8 <./images/svhn-ocr.png> <./images/svhn-centered.png>]
-<./images/hist_train.png, id=52, 392.46625pt x 252.945pt>
+[6]
+<./images/hist_train.png, id=43, 392.46625pt x 252.945pt>
 File: ./images/hist_train.png Graphic file (type png)
 <use ./images/hist_train.png>
-Package pdftex.def Info: ./images/hist_train.png  used on input line 187.
+Package pdftex.def Info: ./images/hist_train.png  used on input line 173.
 (pdftex.def)             Requested size: 141.12454pt x 90.95592pt.
-<./images/hist_validation.png, id=53, 385.44pt x 252.945pt>
+<./images/hist_validation.png, id=44, 385.44pt x 252.945pt>
 File: ./images/hist_validation.png Graphic file (type png)
 <use ./images/hist_validation.png>
-Package pdftex.def Info: ./images/hist_validation.png  used on input line 193.
+Package pdftex.def Info: ./images/hist_validation.png  used on input line 179.
 (pdftex.def)             Requested size: 141.12454pt x 92.6117pt.
-<./images/hist_test.png, id=54, 385.44pt x 252.945pt>
+<./images/hist_test.png, id=45, 385.44pt x 252.945pt>
 File: ./images/hist_test.png Graphic file (type png)
 <use ./images/hist_test.png>
-Package pdftex.def Info: ./images/hist_test.png  used on input line 199.
+Package pdftex.def Info: ./images/hist_test.png  used on input line 185.
 (pdftex.def)             Requested size: 141.12454pt x 92.6117pt.
 
-Overfull \hbox (6.58005pt too wide) in paragraph at lines 206--207
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (6.58005pt too wide) in paragraph at lines 192--193
 []\OT1/ptm/m/n/12 The data set can be ob-tained at the fol-low-ing web-site: ht
 tp://ufldl.stanford.edu/housenumbers/ 
  []
 
-[9 <./images/hist_train.png> <./images/hist_validation.png> <./images/hist_test
-.png>] [10] [11] [12]
-<./images/val_loss.png, id=70, 519.9425pt x 281.05pt>
+[7 <./images/svhn-ocr.png> <./images/svhn-centered.png>] [8 <./images/hist_trai
+n.png> <./images/hist_validation.png> <./images/hist_test.png>] [9] [10]
+<./images/val_loss.png, id=64, 519.9425pt x 281.05pt>
 File: ./images/val_loss.png Graphic file (type png)
 <use ./images/val_loss.png>
-Package pdftex.def Info: ./images/val_loss.png  used on input line 265.
+Package pdftex.def Info: ./images/val_loss.png  used on input line 251.
 (pdftex.def)             Requested size: 223.0721pt x 120.57896pt.
-<./images/val_acc.png, id=71, 528.97626pt x 281.05pt>
+<./images/val_acc.png, id=65, 528.97626pt x 281.05pt>
 File: ./images/val_acc.png Graphic file (type png)
 <use ./images/val_acc.png>
-Package pdftex.def Info: ./images/val_acc.png  used on input line 271.
+Package pdftex.def Info: ./images/val_acc.png  used on input line 257.
 (pdftex.def)             Requested size: 223.0721pt x 118.5205pt.
- [13 <./images/val_loss.png> <./images/val_acc.png>]
-<./images/train_loss.png, id=78, 528.97626pt x 281.05pt>
+<./images/train_loss.png, id=66, 528.97626pt x 281.05pt>
 File: ./images/train_loss.png Graphic file (type png)
 <use ./images/train_loss.png>
-Package pdftex.def Info: ./images/train_loss.png  used on input line 289.
+Package pdftex.def Info: ./images/train_loss.png  used on input line 275.
 (pdftex.def)             Requested size: 223.0721pt x 118.5205pt.
-<./images/train_acc.png, id=79, 528.97626pt x 281.05pt>
+<./images/train_acc.png, id=67, 528.97626pt x 281.05pt>
 File: ./images/train_acc.png Graphic file (type png)
 <use ./images/train_acc.png>
-Package pdftex.def Info: ./images/train_acc.png  used on input line 295.
+Package pdftex.def Info: ./images/train_acc.png  used on input line 281.
 (pdftex.def)             Requested size: 223.0721pt x 118.5205pt.
-<./images/confusion_matrix.png, id=80, 543.02875pt x 467.7475pt>
+
+[11 <./images/val_loss.png> <./images/val_acc.png> <./images/train_loss.png> <.
+/images/train_acc.png>]
+<./images/confusion_matrix.png, id=75, 543.02875pt x 467.7475pt>
 File: ./images/confusion_matrix.png Graphic file (type png)
 <use ./images/confusion_matrix.png>
-Package pdftex.def Info: ./images/confusion_matrix.png  used on input line 308.
+Package pdftex.def Info: ./images/confusion_matrix.png  used on input line 294.
 
 (pdftex.def)             Requested size: 318.66946pt x 274.49835pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[14 <./images/train_loss.png> <./images/train_acc.png>]
-<./images/worst_pred.png, id=86, 912.40875pt x 574.145pt>
+ [12 <./images/confusion_matrix.png>]
+<./images/worst_pred.png, id=80, 912.40875pt x 574.145pt>
 File: ./images/worst_pred.png Graphic file (type png)
 <use ./images/worst_pred.png>
-Package pdftex.def Info: ./images/worst_pred.png  used on input line 317.
+Package pdftex.def Info: ./images/worst_pred.png  used on input line 303.
 (pdftex.def)             Requested size: 455.24408pt x 286.4673pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[15 <./images/confusion_matrix.png>] [16 <./images/worst_pred.png>]
-(./scifile.aux) ) 
+ [13 <./images/worst_pred.png>] (./scifile.aux) ) 
 Here is how much of TeX's memory you used:
  3714 strings out of 494880
  54858 string characters out of 6179601
- 113146 words of memory out of 5000000
+ 112146 words of memory out of 5000000
  6961 multiletter control sequences out of 15000+600000
  25372 words of font info for 68 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 42i,11n,40p,1765b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cmextra/cmmib8.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-sy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/urw/times/utmri8a.pfb>
-Output written on scifile.pdf (16 pages, 1170049 bytes).
+ 42i,11n,40p,1775b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist
+/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on scifile.pdf (13 pages, 1169248 bytes).
 PDF statistics:
- 147 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
+ 138 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
